@@ -212,7 +212,7 @@ def train_input_setup(config):
 
   sub_input_sequence, sub_label_sequence = [], []
   padding = int(abs(image_size - label_size) / 2) # eg. for 3x: (21 - 11) / 2 = 5
-  label_padding = label_size / scale # eg. for 3x: 21 / 3 = 7
+  label_padding = int(label_size / scale) # eg. for 3x: 21 / 3 = 7
 
   for i in xrange(len(data)):
     input_, label_ = preprocess(data[i], scale)
@@ -229,7 +229,7 @@ def train_input_setup(config):
         print(x_loc * scale)
         print(x_loc * scale + label_size, y_loc * scale)
         print(y_loc * scale + label_size)
-        
+
         sub_label = label_[x_loc * scale : x_loc * scale + label_size, y_loc * scale : y_loc * scale + label_size]
 
         sub_input = sub_input.reshape([image_size, image_size, 1])
