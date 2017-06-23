@@ -226,9 +226,6 @@ def train_input_setup(config):
       for y in range(0, w - image_size - padding + 1, stride):
         sub_input = input_[x + padding : x + padding + image_size, y + padding : y + padding + image_size]
         x_loc, y_loc = x + label_padding, y + label_padding
-        print(x_loc * scale)
-        print(x_loc * scale + label_size, y_loc * scale)
-        print(y_loc * scale + label_size)
 
         sub_label = label_[x_loc * scale : x_loc * scale + label_size, y_loc * scale : y_loc * scale + label_size]
 

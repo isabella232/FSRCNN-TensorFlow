@@ -138,7 +138,7 @@ class FSRCNN(object):
         _, err = self.sess.run([self.train_op, self.loss], feed_dict={self.images: batch_images, self.labels: batch_labels, self.batch: self.batch_size})
         batch_average += err
 
-        if counter % 10 == 0:
+        if counter % 500 == 0:
           print("Epoch: [%2d], step: [%2d], time: [%4.4f], loss: [%.8f]" \
             % ((ep+1), counter, time.time() - start_time, err))
 
