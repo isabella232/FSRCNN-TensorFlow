@@ -1,3 +1,4 @@
+from compat import *
 from model import FSRCNN
 
 import numpy as np

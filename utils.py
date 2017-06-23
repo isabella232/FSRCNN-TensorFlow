@@ -2,6 +2,7 @@
 Scipy version > 0.18 is needed, due to 'mode' option from scipy.misc.imread function
 """
 
+from compat import *
 import os
 import glob
 import h5py
