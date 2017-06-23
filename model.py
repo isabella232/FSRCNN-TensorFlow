@@ -1,3 +1,4 @@
+from compat import *
 from utils import (
   read_data, 
   thread_train_setup,
