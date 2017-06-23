@@ -72,7 +72,7 @@ def prepare_data(sess, dataset):
     filenames = os.listdir(dataset)
     data_dir = os.path.join(os.getcwd(), dataset)
   else:
-    data_dir = os.path.join(os.sep, (os.path.join(os.getcwd(), dataset)), "Set5")
+    data_dir = os.path.join(os.sep, (os.path.join(os.getcwd(), dataset)), "Vectors")
   data = sorted(glob.glob(os.path.join(data_dir, "*.bmp")))
 
   return data
