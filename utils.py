@@ -211,7 +211,7 @@ def train_input_setup(config):
   data = prepare_data(sess, dataset=config.data_dir)
 
   sub_input_sequence, sub_label_sequence = [], []
-  padding = abs(image_size - label_size) / 2 # eg. for 3x: (21 - 11) / 2 = 5
+  padding = int(abs(image_size - label_size) / 2) # eg. for 3x: (21 - 11) / 2 = 5
   label_padding = label_size / scale # eg. for 3x: 21 / 3 = 7
 
   for i in xrange(len(data)):
