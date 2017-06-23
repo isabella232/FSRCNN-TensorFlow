@@ -252,8 +252,8 @@ def test_input_setup(config):
   data = prepare_data(sess, dataset="Test")
 
   sub_input_sequence, sub_label_sequence = [], []
-  padding = abs(image_size - label_size) / 2 # eg. (21 - 11) / 2 = 5
-  label_padding = label_size / scale # eg. 21 / 3 = 7
+  padding = int(abs(image_size - label_size) / 2) # eg. (21 - 11) / 2 = 5
+  label_padding = int(label_size / scale) # eg. 21 / 3 = 7
 
   pic_index = 2 # Index of image based on lexicographic order in data folder
   input_, label_ = preprocess(data[pic_index], config.scale)
